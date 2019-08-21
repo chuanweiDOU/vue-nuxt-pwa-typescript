@@ -17,3 +17,23 @@
     </v-flex>
   </v-layout>
 </template>
+
+<script lang="ts">
+import { Component, Vue } from 'nuxt-property-decorator';
+
+@Component({
+})
+class Inspire extends Vue {
+  title: string = 'Him';
+  head () {
+    return {
+      title: this.title
+    };
+  }
+  mounted () {
+    console.log(this);
+  }
+}
+
+export default Inspire;
+</script>

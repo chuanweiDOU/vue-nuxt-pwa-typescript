@@ -1,13 +1,18 @@
-import colors from 'vuetify/es5/util/colors'
+import colors from 'vuetify/es5/util/colors';
+import { Configuration } from '@nuxt/types';
 
-export default {
+const config: Configuration = {
   mode: 'universal',
+  server: {
+    port: 3000, // default: 3000
+    host: '0.0.0.0' // default: localhost,
+  },
   /*
   ** Headers of the page
   */
   head: {
-    titleTemplate: '%s - ' + process.env.npm_package_name,
-    title: process.env.npm_package_name || '',
+    titleTemplate: '%s',
+    title: process.env.npm_package_description,
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
@@ -32,12 +37,15 @@ export default {
   plugins: [
   ],
   /*
-  ** Nuxt.js dev-modules
+  ** Nuxt.js build-modules
   */
-  devModules: [
-    // Doc: https://github.com/nuxt-community/eslint-module
+  buildModules: [
     '@nuxtjs/eslint-module',
-    '@nuxtjs/vuetify'
+    '@nuxtjs/vuetify',
+    ['@nuxt/typescript-build', {
+      typeCheck: true,
+      ignoreNotFoundWarnings: true
+    }]
   ],
   /*
   ** Nuxt.js modules
@@ -81,7 +89,16 @@ export default {
     /*
     ** You can extend webpack config here
     */
-    extend (config, ctx) {
+    // extend (config, ctx) {
+    // }
+
+    babel: {
+      plugins: [
+        ['@babel/plugin-proposal-decorators', { legacy: true }],
+        ['@babel/plugin-proposal-class-properties', { loose: true }]
+      ]
     }
   }
-}
+};
+
+export default config;
