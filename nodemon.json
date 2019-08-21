@@ -1,0 +1,5 @@
+{
+  "watch": ["server", "nuxt.config.ts"],
+  "ext": "ts",
+  "exec": "ts-node --project server/tsconfig.json"
+}
