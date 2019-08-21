@@ -1,6 +1,6 @@
-# pwa-mobile
+# nuxt-typescript
 
-> Learning PWA With Nuxt
+> My ultimate Nuxt.js project
 
 ## Build Setup
 

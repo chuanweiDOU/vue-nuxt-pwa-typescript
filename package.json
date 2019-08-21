@@ -1,25 +1,22 @@
 {
-  "name": "pwa-mobile",
+  "name": "nuxt-typescript",
   "version": "1.0.0",
-  "description": "Learning PWA With Nuxt",
+  "description": "My ultimate Nuxt.ts project",
   "author": "Him-2C",
   "private": true,
   "scripts": {
-    "dev": "cross-env NODE_ENV=development nodemon server/index.js --watch server",
+    "dev": "nuxt",
     "build": "nuxt build",
-    "start": "cross-env NODE_ENV=production node server/index.js",
+    "start": "nuxt start",
     "generate": "nuxt generate",
     "lint": "eslint --ext .js,.vue --ignore-path .gitignore ."
   },
   "dependencies": {
     "nuxt": "^2.0.0",
-    "cross-env": "^5.2.0",
-    "express": "^4.16.4",
     "@nuxtjs/axios": "^5.3.6",
     "@nuxtjs/pwa": "^3.0.0-0"
   },
   "devDependencies": {
-    "nodemon": "^1.18.9",
     "@nuxtjs/vuetify": "^1.0.0",
     "@nuxtjs/eslint-config": "^1.0.1",
     "@nuxtjs/eslint-module": "^1.0.0",
